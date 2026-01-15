@@ -43,7 +43,13 @@ nexart_mvp/
 - **Styling**: CSS Grid, Flexbox, CSS Variables
 - **Responsive**: Mobile-first design approach
 
-## 🚀 Getting Started
+## 🚀 Deployment
+
+**Live Site**: https://nexartlimited.com
+
+Deployed on Vercel with custom domain configuration.
+
+## 🛠️ Local Development
 
 1. Clone the repository:
    ```bash
