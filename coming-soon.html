@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Nexart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Nexart</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="coming-soon.html">Coming Soon</a></li>
+                <li><a href="waitlist.html">Waitlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Coming Soon Content -->
+    <div class="coming-soon-container">
+        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">
+            Exciting Features <span class="gradient-text">Coming Soon</span>
+        </h1>
+        <p style="font-size: 1.3rem; color: #666; max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+            We're building something extraordinary. Our platform will introduce innovative capabilities designed to revolutionize the digital art experience.
+        </p>
+
+        <!-- Features List -->
+        <div class="features-list">
+            <ul>
+                <li><strong>Enhanced Artist Tools</strong> - Powerful new features to help artists showcase their creativity like never before</li>
+                <li><strong>Community Engagement</strong> - Innovative ways for artists and collectors to connect and collaborate</li>
+                <li><strong>Advanced Marketplace</strong> - Next-generation trading and discovery mechanisms for digital art</li>
+                <li><strong>Exclusive Collections</strong> - Curated drops and limited editions from renowned female artists</li>
+                <li><strong>Creator Empowerment</strong> - New tools and resources to help artists grow their presence and earnings</li>
+                <li><strong>Collector Benefits</strong> - Special perks and access for our early supporters and active community members</li>
+            </ul>
+        </div>
+
+        <!-- Email Signup Form -->
+        <div class="form-container" style="margin-top: 4rem;">
+            <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;">Stay Updated</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Be the first to know when we announce new features and launch dates
+            </p>
+            <form id="comingSoonForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest">I'm interested as a...</label>
+                    <select id="interest" name="interest" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                        <option value="collector">Collector</option>
+                        <option value="artist">Artist</option>
+                        <option value="both">Both</option>
+                        <option value="other">Just Exploring</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Notify Me</button>
+            </form>
+            <p id="formMessage" style="text-align: center; margin-top: 1rem; color: var(--primary-purple); font-weight: 500; display: none;"></p>
+        </div>
+
+        <!-- Timeline Hint -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h4 style="color: var(--primary-purple); font-size: 1.3rem; margin-bottom: 0.5rem;">📅 Launching Q1 2026</h4>
+            <p style="color: #666;">
+                We're working hard to bring you an exceptional platform. Join our waitlist to get exclusive early access.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Discord">💬</a>
+                <a href="#" title="Medium">📝</a>
+            </div>
+            <p class="copyright">© 2024 Nexart Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
