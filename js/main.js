@@ -106,14 +106,73 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Home Page Waitlist Form Handler
+    const homeWaitlistForm = document.getElementById('homeWaitlistForm');
+    const homeFormMessage = document.getElementById('homeFormMessage');
+
+    if (homeWaitlistForm && homeFormMessage) {
+        homeWaitlistForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                email: document.getElementById('homeEmail').value
+            };
+
+            console.log('Home Waitlist Form Submitted:', formData);
+
+            homeFormMessage.textContent = '✅ Thank you! You\'re on the waitlist.';
+            homeFormMessage.style.display = 'block';
+            homeFormMessage.style.color = '#10b981';
+
+            homeWaitlistForm.reset();
+
+            setTimeout(function() {
+                homeFormMessage.style.display = 'none';
+            }, 5000);
+        });
+    }
+
+    // Artists Page Waitlist Form Handler
+    const artistsWaitlistForm = document.getElementById('artistsWaitlistForm');
+    const artistsFormMessage = document.getElementById('artistsFormMessage');
+
+    if (artistsWaitlistForm && artistsFormMessage) {
+        artistsWaitlistForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                email: document.getElementById('artistsEmail').value
+            };
+
+            console.log('Artists Waitlist Form Submitted:', formData);
+
+            artistsFormMessage.textContent = '✅ Subscribed! We\'ll keep you updated.';
+            artistsFormMessage.style.display = 'block';
+            artistsFormMessage.style.color = '#10b981';
+
+            artistsWaitlistForm.reset();
+
+            setTimeout(function() {
+                artistsFormMessage.style.display = 'none';
+            }, 5000);
+        });
+    }
+
     // Add click handlers to "View Details" buttons in gallery
-    const viewDetailsButtons = document.querySelectorAll('.nft-card .btn');
-    viewDetailsButtons.forEach(button => {
+    const nftDetailsButtons = document.querySelectorAll('.nft-details-btn');
+    nftDetailsButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            if (button.textContent === 'View Details') {
-                e.preventDefault();
-                alert('NFT details coming soon! Join our waitlist to be notified when the marketplace launches.');
-            }
+            e.preventDefault();
+            alert('Available at launch. Join our waitlist to be notified when the marketplace goes live!');
+        });
+    });
+
+    // Handle footer policy links
+    const footerLinks = document.querySelectorAll('.footer-link');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Policy pages coming soon. We\'re committed to transparency and user privacy.');
         });
     });
 

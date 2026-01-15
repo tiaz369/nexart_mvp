@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Nexart</title>
+    <title>NFT Gallery - Nexart</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,134 +17,376 @@
                 <li><a href="artists.html">Artists</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="coming-soon.html">Coming Soon</a></li>
                 <li><a href="waitlist.html">Waitlist</a></li>
             </ul>
+            <div class="nav-buttons">
+                <button class="btn btn-wallet" disabled title="Available at launch">
+                    <span class="wallet-icon">👛</span>
+                    Connect Wallet
+                </button>
+                <a href="waitlist.html" class="btn btn-primary btn-nav">Join Waitlist</a>
+            </div>
         </div>
     </nav>
 
     <!-- Gallery Section -->
     <section style="margin-top: 100px;">
-        <h2 class="section-title">Featured <span class="gradient-text">Collection</span></h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">
-            Explore stunning digital artworks from our talented community
+        <h2 class="section-title">NFT <span class="gradient-text">Gallery</span></h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
+            Explore unique digital artworks from our featured artists
         </p>
 
+        <!-- Filter Options (Disabled) -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" disabled>All</button>
+            <button class="filter-btn" disabled>Abstract</button>
+            <button class="filter-btn" disabled>Digital</button>
+            <button class="filter-btn" disabled>Contemporary</button>
+        </div>
+
         <div class="gallery-grid">
-            <!-- NFT 1 -->
+            <!-- Sarah Chen's Artworks (6) -->
             <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
                 <div class="nft-info">
-                    <h3>Ethereal Dreams #01</h3>
-                    <p class="nft-artist">by Sofia Martinez</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
+                    <h3>Ethereal Flow #1</h3>
+                    <p class="nft-artist">by Sarah Chen</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
                 </div>
             </div>
 
-            <!-- NFT 2 -->
             <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
                 <div class="nft-info">
-                    <h3>Urban Harmony</h3>
+                    <h3>Abstract Harmony</h3>
+                    <p class="nft-artist">by Sarah Chen</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Digital Zen</h3>
+                    <p class="nft-artist">by Sarah Chen</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Cosmic Balance</h3>
+                    <p class="nft-artist">by Sarah Chen</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Tranquil Chaos</h3>
+                    <p class="nft-artist">by Sarah Chen</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1576398289164-c48dc021b4e1?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Inner Reflection</h3>
+                    <p class="nft-artist">by Sarah Chen</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Maria Santos' Artworks (5) -->
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Carnival Dreams</h3>
+                    <p class="nft-artist">by Maria Santos</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Tropical Pulse</h3>
+                    <p class="nft-artist">by Maria Santos</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Cultural Tapestry</h3>
+                    <p class="nft-artist">by Maria Santos</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1551732998-9ba1c7f0c2f3?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Rhythmic Colors</h3>
+                    <p class="nft-artist">by Maria Santos</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Fiesta Moderna</h3>
+                    <p class="nft-artist">by Maria Santos</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Aisha Rahman's Artworks (4) -->
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Sacred Geometry #1</h3>
+                    <p class="nft-artist">by Aisha Rahman</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Pattern Perfection</h3>
+                    <p class="nft-artist">by Aisha Rahman</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Symmetry Divine</h3>
+                    <p class="nft-artist">by Aisha Rahman</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Infinite Patterns</h3>
+                    <p class="nft-artist">by Aisha Rahman</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Elena Novak's Artworks (5) -->
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Fantasy Realm #1</h3>
+                    <p class="nft-artist">by Elena Novak</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Mythical Journey</h3>
+                    <p class="nft-artist">by Elena Novak</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1618172193763-c511deb635ca?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Dreamscape Portal</h3>
+                    <p class="nft-artist">by Elena Novak</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Enchanted Tales</h3>
+                    <p class="nft-artist">by Elena Novak</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Whimsical World</h3>
+                    <p class="nft-artist">by Elena Novak</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Yuki Tanaka's Artworks (6) -->
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Minimal Essence</h3>
                     <p class="nft-artist">by Yuki Tanaka</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
                 </div>
             </div>
 
-            <!-- NFT 3 -->
             <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
                 <div class="nft-info">
-                    <h3>Cosmic Reflections</h3>
-                    <p class="nft-artist">by Amara Johnson</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
-                </div>
-            </div>
-
-            <!-- NFT 4 -->
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
-                <div class="nft-info">
-                    <h3>Neon Wilderness</h3>
-                    <p class="nft-artist">by Sofia Martinez</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
-                </div>
-            </div>
-
-            <!-- NFT 5 -->
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
-                <div class="nft-info">
-                    <h3>Abstract Serenity</h3>
+                    <h3>Quiet Space</h3>
                     <p class="nft-artist">by Yuki Tanaka</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
                 </div>
             </div>
 
-            <!-- NFT 6 -->
             <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1576398289164-c48dc021b4e1?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1557682268-e3955ed5d83f?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
                 <div class="nft-info">
-                    <h3>Digital Sunset</h3>
-                    <p class="nft-artist">by Amara Johnson</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
-                </div>
-            </div>
-
-            <!-- NFT 7 -->
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
-                <div class="nft-info">
-                    <h3>Vibrant Futures</h3>
-                    <p class="nft-artist">by Sofia Martinez</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
-                </div>
-            </div>
-
-            <!-- NFT 8 -->
-            <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
-                <div class="nft-info">
-                    <h3>Chromatic Flow</h3>
+                    <h3>Void Beauty</h3>
                     <p class="nft-artist">by Yuki Tanaka</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
                 </div>
             </div>
 
-            <!-- NFT 9 -->
             <div class="nft-card">
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=600&h=600&fit=crop"
-                     alt="Digital Artwork"
-                     class="nft-image">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
                 <div class="nft-info">
-                    <h3>Geometric Dreams</h3>
-                    <p class="nft-artist">by Amara Johnson</p>
-                    <button class="btn btn-primary btn-small">View Details</button>
+                    <h3>Serene Form</h3>
+                    <p class="nft-artist">by Yuki Tanaka</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85e3fc?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Gentle Gradient</h3>
+                    <p class="nft-artist">by Yuki Tanaka</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Pure Simplicity</h3>
+                    <p class="nft-artist">by Yuki Tanaka</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Zara Ahmed's Artworks (4) -->
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1533158326339-7f3cf2404354?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Desert Digital</h3>
+                    <p class="nft-artist">by Zara Ahmed</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Heritage Fusion</h3>
+                    <p class="nft-artist">by Zara Ahmed</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Modern Arabesque</h3>
+                    <p class="nft-artist">by Zara Ahmed</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
+                </div>
+            </div>
+
+            <div class="nft-card">
+                <div class="nft-badge">NFT</div>
+                <img src="https://images.unsplash.com/photo-1553481187-be93c21490a9?w=600&h=600&fit=crop" alt="Digital Artwork" class="nft-image">
+                <div class="nft-info">
+                    <h3>Cultural Bridge</h3>
+                    <p class="nft-artist">by Zara Ahmed</p>
+                    <p class="nft-edition">Edition: 1/1</p>
+                    <button class="btn btn-primary btn-small nft-details-btn">View Details</button>
                 </div>
             </div>
         </div>
 
         <!-- Call to Action -->
         <div style="text-align: center; margin-top: 4rem;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">More Coming Soon</h3>
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">More artworks dropping soon</h3>
             <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                Join our waitlist to be notified when new collections drop
+                Join our waitlist to be notified when new collections launch
             </p>
             <a href="waitlist.html" class="btn btn-primary">Join Waitlist</a>
         </div>
@@ -157,9 +399,13 @@
                 <a href="#" title="Twitter">🐦</a>
                 <a href="#" title="Instagram">📷</a>
                 <a href="#" title="Discord">💬</a>
-                <a href="#" title="Medium">📝</a>
             </div>
-            <p class="copyright">© 2024 Nexart Ltd. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2024-2026 Nexart Ltd. All rights reserved.</p>
         </div>
     </footer>
 
