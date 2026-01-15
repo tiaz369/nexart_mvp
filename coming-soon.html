@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Nexart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Nexart</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="waitlist.html">Waitlist</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn btn-wallet" disabled title="Available at launch">
+                    <span class="wallet-icon">👛</span>
+                    Connect Wallet
+                </button>
+                <a href="waitlist.html" class="btn btn-primary btn-nav">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Coming Soon Content -->
+    <div class="coming-soon-container">
+        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">
+            Platform Features <span class="gradient-text">Coming Soon</span>
+        </h1>
+        <p style="font-size: 1.3rem; color: #666; max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+            We're building Nexart for launch in Q1 2026
+        </p>
+
+        <!-- What We're Building -->
+        <div class="features-showcase">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">What We're Building</h2>
+
+            <div class="features-grid">
+                <div class="feature-showcase-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Artist Profiles</h3>
+                    <p>Comprehensive profiles showcasing portfolios and creative journeys.</p>
+                </div>
+
+                <div class="feature-showcase-card">
+                    <div class="feature-icon">🛒</div>
+                    <h3>NFT Marketplace</h3>
+                    <p>Browse and collect unique digital artworks authenticated on blockchain.</p>
+                </div>
+
+                <div class="feature-showcase-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Community Hub</h3>
+                    <p>Connect with artists and collectors in an inclusive environment.</p>
+                </div>
+
+                <div class="feature-showcase-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Wallet Integration</h3>
+                    <p>Secure connection with major Web3 wallets for seamless transactions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline-section">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">📅</div>
+                    <div class="timeline-content">
+                        <h3>Q1 2026</h3>
+                        <p>MVP Launch & Beta Testing</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">🚀</div>
+                    <div class="timeline-content">
+                        <h3>Q3-Q4 2026</h3>
+                        <p>Platform Enhancement & Expansion</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">✨</div>
+                    <div class="timeline-content">
+                        <h3>2027</h3>
+                        <p>Full Feature Release</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Early Access Form -->
+        <div class="form-container" style="margin-top: 4rem;">
+            <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;">Get Early Access</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Be the first to know when we announce new features and launch dates
+            </p>
+            <form id="comingSoonForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest">I'm interested as a...</label>
+                    <select id="interest" name="interest" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                        <option value="collector">Collector</option>
+                        <option value="artist">Artist</option>
+                        <option value="both">Both</option>
+                        <option value="other">Just Exploring</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Notify Me</button>
+            </form>
+            <p id="formMessage" style="text-align: center; margin-top: 1rem; color: var(--primary-purple); font-weight: 500; display: none;"></p>
+            <p style="text-align: center; margin-top: 1rem; color: #999; font-size: 0.9rem;">
+                We respect your privacy. Unsubscribe anytime.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2024-2026 Nexart Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

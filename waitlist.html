@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Waitlist - Nexart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Nexart</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="waitlist.html">Waitlist</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn btn-wallet" disabled title="Available at launch">
+                    <span class="wallet-icon">👛</span>
+                    Connect Wallet
+                </button>
+                <a href="waitlist.html" class="btn btn-primary btn-nav">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Waitlist Content -->
+    <div class="coming-soon-container">
+        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">
+            Join the <span class="gradient-text">Waitlist</span>
+        </h1>
+        <p style="font-size: 1.3rem; color: #666; max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+            Be the first to know when we launch and get exclusive early access to the Nexart platform
+        </p>
+
+        <!-- Benefits Section -->
+        <div style="max-width: 800px; margin: 0 auto 3rem;">
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div style="text-align: center; padding: 1.5rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎨</div>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Early Access</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Be among the first to explore the platform</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⭐</div>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Exclusive Updates</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Get insider news and announcements</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎁</div>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Special Perks</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Early supporters receive exclusive benefits</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Waitlist Form -->
+        <div class="form-container">
+            <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;">Sign Up Now</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Join thousands of art enthusiasts waiting for launch
+            </p>
+            <form id="waitlistForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address *</label>
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">I am a... *</label>
+                    <select id="role" name="role" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required>
+                        <option value="">Select your role</option>
+                        <option value="artist">Artist</option>
+                        <option value="collector">Collector</option>
+                        <option value="both">Both Artist & Collector</option>
+                        <option value="enthusiast">Art Enthusiast</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="interests">What interests you most? (Optional)</label>
+                    <textarea id="interests" name="interests" rows="3" placeholder="Tell us what excites you about Nexart..."></textarea>
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="checkbox" id="newsletter" name="newsletter" style="width: auto;">
+                    <label for="newsletter" style="margin-bottom: 0; font-weight: normal;">I want to receive updates and news from Nexart</label>
+                </div>
+                <button type="submit" class="btn-submit">Join the Waitlist</button>
+            </form>
+            <p id="waitlistMessage" style="text-align: center; margin-top: 1rem; color: var(--primary-purple); font-weight: 500; display: none;"></p>
+        </div>
+
+        <!-- Social Proof -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p style="color: #666; font-size: 1.1rem;">
+                💜 Join our growing community of artists and collectors shaping the future of digital art
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2024-2026 Nexart Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
