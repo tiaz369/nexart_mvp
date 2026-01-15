@@ -1,16 +1,39 @@
 /* NexArt MVP - Main Stylesheet */
 
-/* CSS Variables for Theme */
+/* CSS Variables for Theme - Art Gallery Style */
 :root {
-    --primary-purple: #7C3AED;
-    --primary-blue: #2563EB;
-    --dark-bg: #1a1a2e;
-    --light-bg: #f8f9fa;
-    --text-dark: #2d3748;
+    /* Primary Colors */
+    --primary-indigo: #6366F1;
+    --secondary-purple: #D946EF;
+    --accent-purple: #8B5CF6;
+
+    /* Background Colors */
+    --bg-warm-white: #FFFBEB;
+    --bg-card: #FFFFFF;
+    --bg-section-alt: #FEF3C7;
+
+    /* Text Colors */
+    --text-heading: #111827;
+    --text-body: #374151;
+    --text-muted: #6B7280;
     --text-light: #ffffff;
-    --card-bg: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #D946EF 100%);
+    --gradient-button: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    --gradient-logo: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+
+    /* UI Elements */
+    --border-color: #E5E7EB;
+    --focus-color: #6366F1;
+    --footer-bg: #111827;
+    --footer-text: #F9FAFB;
+
+    /* Shadows */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
 }
 
 /* Global Styles */
@@ -22,7 +45,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-dark);
+    color: var(--text-body);
+    background-color: var(--bg-warm-white);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -32,10 +56,11 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    background: var(--bg-card);
     padding: 1rem 5%;
     z-index: 1000;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
@@ -47,7 +72,10 @@ nav {
 }
 
 .logo {
-    color: var(--text-light);
+    background: var(--gradient-logo);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
@@ -61,14 +89,14 @@ nav {
 }
 
 .nav-menu a {
-    color: var(--text-light);
+    color: var(--text-body);
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s;
+    transition: color 0.3s;
 }
 
 .nav-menu a:hover {
-    opacity: 0.8;
+    color: var(--primary-indigo);
 }
 
 .mobile-menu-toggle {
@@ -84,7 +112,7 @@ nav {
 .hero {
     margin-top: 70px;
     min-height: 90vh;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    background: var(--gradient-hero);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,20 +148,26 @@ nav {
 }
 
 .btn {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 12px 28px;
+    font-size: 1rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
     font-weight: 600;
 }
 
 .btn-primary {
-    background: var(--text-light);
-    color: var(--primary-purple);
+    background: var(--primary-indigo);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background: var(--gradient-button);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
@@ -142,9 +176,15 @@ nav {
     border: 2px solid var(--text-light);
 }
 
+.btn-secondary:hover {
+    background: var(--bg-card);
+    color: var(--primary-indigo);
+    border-color: var(--primary-indigo);
+}
+
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 /* Section Styles */
@@ -158,11 +198,11 @@ section {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--text-heading);
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    background: var(--gradient-logo);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -177,7 +217,7 @@ section {
 }
 
 .feature-card {
-    background: var(--card-bg);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -196,7 +236,7 @@ section {
 }
 
 .feature-card h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -209,7 +249,7 @@ section {
 }
 
 .artist-card {
-    background: var(--card-bg);
+    background: var(--bg-card);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -232,7 +272,7 @@ section {
 }
 
 .artist-info h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 0.5rem;
 }
 
@@ -250,7 +290,7 @@ section {
 }
 
 .nft-card {
-    background: var(--card-bg);
+    background: var(--bg-card);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -273,12 +313,12 @@ section {
 }
 
 .nft-info h3 {
-    color: var(--text-dark);
+    color: var(--text-heading);
     margin-bottom: 0.5rem;
 }
 
 .nft-artist {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -299,7 +339,7 @@ section {
 }
 
 .about-section h2 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 1rem;
     font-size: 2rem;
 }
@@ -307,7 +347,7 @@ section {
 .about-section p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-dark);
+    color: var(--text-heading);
 }
 
 .highlight-box {
@@ -328,7 +368,7 @@ section {
 .form-container {
     max-width: 600px;
     margin: 0 auto;
-    background: var(--card-bg);
+    background: var(--bg-card);
     padding: 3rem;
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
@@ -341,7 +381,7 @@ section {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--text-heading);
     font-weight: 500;
 }
 
@@ -358,7 +398,7 @@ section {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-purple);
+    border-color: var(--primary-indigo);
 }
 
 .btn-submit {
@@ -381,8 +421,8 @@ section {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-    color: var(--text-light);
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 3rem 5%;
     margin-top: 5rem;
 }
@@ -439,7 +479,7 @@ footer {
 .features-list li {
     padding: 1rem;
     margin-bottom: 1rem;
-    background: var(--card-bg);
+    background: var(--bg-card);
     border-radius: 10px;
     box-shadow: var(--shadow);
     font-size: 1.1rem;
@@ -512,7 +552,7 @@ footer {
 }
 
 .step-card h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
@@ -549,7 +589,7 @@ footer {
 
 .inline-form input[type="email"]:focus {
     outline: none;
-    border-color: var(--primary-purple);
+    border-color: var(--primary-indigo);
 }
 
 .inline-form .btn {
@@ -576,7 +616,7 @@ footer {
     padding: 0.6rem 1.5rem;
     border: 2px solid var(--primary-purple);
     background: transparent;
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     border-radius: 50px;
     cursor: not-allowed;
     transition: all 0.3s;
@@ -622,7 +662,7 @@ footer {
 }
 
 .artist-style {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 1rem;
@@ -694,7 +734,7 @@ footer {
 
 .mission-card h3,
 .vision-card h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -710,7 +750,7 @@ footer {
 }
 
 .benefit-card {
-    background: var(--card-bg);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -723,7 +763,7 @@ footer {
 }
 
 .benefit-card h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 1rem;
 }
 
@@ -735,7 +775,7 @@ footer {
 }
 
 .whats-next-section h2 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 1rem;
 }
 
@@ -744,7 +784,7 @@ footer {
 }
 
 .company-info h2 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 1.5rem;
 }
 
@@ -800,7 +840,7 @@ footer {
 }
 
 .timeline-content {
-    background: var(--card-bg);
+    background: var(--bg-card);
     padding: 1.5rem 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -809,7 +849,7 @@ footer {
 }
 
 .timeline-content h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 0.5rem;
 }
 
@@ -823,7 +863,7 @@ footer {
 }
 
 .feature-showcase-card {
-    background: var(--card-bg);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -837,7 +877,7 @@ footer {
 }
 
 .feature-showcase-card h3 {
-    color: var(--primary-purple);
+    color: var(--primary-indigo);
     margin-bottom: 0.5rem;
 }
 
