@@ -87,4 +87,4 @@ MVP Website Complete - Beta testing planned for Q3-Q4 2026
 
 ---
 
-© 2024 NexArt Ltd. All rights reserved.
+© 2026 NexArt Ltd. All rights reserved.
