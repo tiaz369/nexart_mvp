@@ -103,7 +103,7 @@ nav {
     display: none;
     background: none;
     border: none;
-    color: var(--text-light);
+    color: var(--text-heading);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -513,6 +513,12 @@ footer {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
     border: 1px solid rgba(99, 102, 241, 0.3);
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.btn-wallet:hover {
+    opacity: 0.5;
 }
 
 .btn-wallet .wallet-icon {
