@@ -73,7 +73,7 @@ Deployed on Vercel with custom domain configuration.
 - **Home** (`/index.html`) - Hero section, core features, call-to-action
 - **Artists** (`/artists.html`) - Featured artist profiles
 - **Gallery** (`/gallery.html`) - NFT artwork collection
-- **About** (`/about.html`) - Mission, vision, Q1 2026 announcement
+- **About** (`/about.html`) - Mission, vision, company information
 - **Coming Soon** (`/coming-soon.html`) - Upcoming features (vague descriptions)
 - **Waitlist** (`/waitlist.html`) - Email signup for early access
 
