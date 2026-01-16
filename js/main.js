@@ -167,14 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle footer policy links
-    const footerLinks = document.querySelectorAll('.footer-link');
-    footerLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Policy pages coming soon. We\'re committed to transparency and user privacy.');
-        });
-    });
+    // Footer links are now functional - privacy.html and terms.html exist
+    // No need to prevent default - links work normally
 
     // Smooth scroll for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -235,13 +229,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Prevent social links from navigating (since they're placeholders)
-    const socialLinks = document.querySelectorAll('.social-links a');
-    socialLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Social media links coming soon! Follow us for updates.');
-        });
+    // Only prevent disabled social links (Instagram and Discord with "Soon" label)
+    // X (Twitter) link should work normally
+    const disabledSocialLinks = document.querySelectorAll('.social-links a[onclick="return false;"]');
+    disabledSocialLinks.forEach(link => {
+        // These links already have onclick="return false;" in HTML
+        // No additional JavaScript needed - they're already disabled
     });
 });
 
