@@ -1,12 +1,12 @@
 # NexArt MVP Website
 
-**Empowering Female Artists in Web3**
+**AI Infrastructure & Digital Creative Economy**
 
-NexArt is a revolutionary NFT platform connecting talented female artists with collectors through blockchain technology.
+NexArt Limited is a London-based technology company working at the intersection of AI infrastructure and the digital creative economy. We develop tools and protocols that address trust, identity, and ownership in decentralised digital environments.
 
 ## 🎨 About
 
-NexArt is building an inclusive platform to empower female artists in the digital art space, providing them with tools, community, and opportunities to thrive in the Web3 ecosystem.
+NexArt focuses on AI agent identity authentication research, while supporting independent and female artists through our platform development. Our core technology centres on how autonomous AI systems can be assigned verifiable, tamper-resistant identities.
 
 ## 📋 Project Structure
 
