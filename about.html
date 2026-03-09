@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - NexArt</title>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+    <!-- Get your ID from: https://analytics.google.com/analytics/web/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Responsive styles for founder section */
+        @media (max-width: 768px) {
+            .founder-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            .founder-photo {
+                max-width: 200px !important;
+                margin: 0 auto !important;
+            }
+        }
+    </style>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth-state.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -19,14 +51,13 @@
                 <li><a href="artists.html">Artists</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="waitlist.html">Waitlist</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="nav-buttons">
-                <button class="btn btn-wallet" disabled title="Available at launch">
-                    <svg class="wallet-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-                    Connect Wallet
-                </button>
-                <a href="waitlist.html" class="btn btn-primary btn-nav">Join Waitlist</a>
+            <div class="nav-buttons auth-nav">
+                <a href="auth.html" id="loginLink" class="btn btn-secondary btn-nav">Login</a>
+                <a href="dashboard.html" id="dashboardLink" class="btn btn-secondary btn-nav hidden">Dashboard</a>
+                <a href="admin.html" id="adminLink" class="btn btn-secondary btn-nav hidden">Admin</a>
+                <a href="#" id="logoutLink" class="btn btn-secondary btn-nav hidden" onclick="handleLogout(); return false;">Logout</a>
             </div>
         </div>
     </nav>
@@ -35,61 +66,65 @@
     <section style="margin-top: 100px;">
         <div class="about-hero">
             <h1 class="section-title">About <span class="gradient-text">NexArt</span></h1>
-            <p class="about-subtitle">Building the future of female artists in Web3</p>
+            <p class="about-subtitle">AI Infrastructure & Digital Creative Economy</p>
         </div>
 
         <div class="about-content">
-            <!-- Our Story / Mission -->
+            <!-- About NexArt -->
             <div class="about-section">
-                <h2>Our Mission</h2>
-                <p>
-                    NexArt is building a platform to empower female artists in the Web3 ecosystem. We believe blockchain technology and NFTs offer unprecedented opportunities for artists to own, showcase, and monetize their creative work.
-                </p>
-                <p>
-                    Our mission is to create an inclusive space where female artists can thrive, connect with global audiences, and build sustainable creative careers through NFT technology.
-                </p>
-                <p style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); border-left: 4px solid var(--primary-indigo); border-radius: 8px;">
-                    <strong>NexArt is actively building a curated platform with select pioneer artists, creating an empowering ecosystem for female creators in Web3.</strong>
+                <h2>About NexArt</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    NexArt Limited is a London-based technology company working at the intersection of AI infrastructure and the digital creative economy. We develop tools and protocols that address trust, identity, and ownership in decentralised digital environments — with a focus on supporting independent and female artists alongside our core technology work.
                 </p>
             </div>
 
-            <!-- Mission & Vision Grid -->
-            <div class="mission-vision-grid">
-                <div class="mission-card">
-                    <h3>Our Mission</h3>
-                    <p>
-                        To empower female artists by providing them with the tools, community, and platform to thrive in Web3. We're committed to breaking down barriers and creating opportunities for women in the digital art space.
-                    </p>
-                </div>
-                <div class="vision-card">
-                    <h3>Our Vision</h3>
-                    <p>
-                        A world where female artists have equal access to opportunities in the digital art market, where their work is valued and celebrated, and where Web3 technology serves as a bridge to global audiences.
+            <!-- Technology Research -->
+            <div class="about-section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h2>Technology Research</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Our technology research centres on <strong>AI agent identity authentication</strong>: how autonomous AI systems can be assigned verifiable, tamper-resistant identities in a world where agents increasingly act without direct human supervision.
+                </p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary-indigo);">
+                    <p style="margin: 0; color: var(--text-body); font-size: 1rem;">
+                        <strong>Patent Status:</strong> A UK patent application has been filed with the Intellectual Property Office for our core protocol<br>
+                        <span style="color: var(--text-muted); font-size: 0.95rem;">Application No. GB 2604570.8, March 2026</span>
                     </p>
                 </div>
             </div>
 
-            <!-- Meet the Founder -->
+
+            <!-- Founder -->
             <div style="background: #FFFBEB; padding: 4rem 5%; margin: 4rem -5%; border-radius: 12px;">
-                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--text-heading);">Meet the Founder</h2>
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: var(--text-body);">
-                        Tia founded NexArt to create a more inclusive space for female artists in Web3. A UK-based entrepreneur with master's degrees in Education (UCL) and Film Studies (UEA), she brings a unique perspective that bridges art, technology, and community.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: var(--text-body);">
-                        Through NexArt, she is building infrastructure to empower artists with the tools and opportunities they need to thrive in the evolving digital art landscape.
-                    </p>
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--text-heading);">Founder</h2>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="founder-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; margin-bottom: 2rem;">
+                        <!-- Founder Photo -->
+                        <div style="text-align: center;">
+                            <!-- TODO: Replace with actual photo - upload founder-photo.jpg to /images/ directory -->
+                            <img class="founder-photo" src="images/founder-photo.jpg" alt="Linfang Zhong (Tia)"
+                                 style="width: 100%; max-width: 280px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="founder-photo" style="display: none; width: 100%; max-width: 280px; height: 320px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; align-items: center; justify-content: center; color: white; font-size: 4rem; font-weight: 600; margin: 0 auto;">
+                                LZ
+                            </div>
+                        </div>
 
-                    <div style="border-left: 4px solid #6366F1; padding: 1.5rem 2rem; background: white; border-radius: 8px; margin: 2rem 0;">
-                        <p style="font-size: 1.2rem; font-style: italic; color: var(--text-heading); margin-bottom: 0.5rem;">
-                            "Every female artist deserves equal access to Web3 opportunities. NexArt exists to make that a reality."
-                        </p>
-                        <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
-                            — Tia, Founder
-                        </p>
+                        <!-- Founder Info -->
+                        <div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-heading);">Linfang Zhong (Tia)</h3>
+                            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem;">Founder & Director</p>
+
+                            <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; color: var(--text-body);">
+                                Linfang Zhong (Tia) is the Founder and Director of NexArt Limited. She holds an MA in Film Studies from the University of East Anglia and an MA in Education from University College London.
+                            </p>
+
+                            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-body);">
+                                Her work bridges art, technology research, and digital infrastructure.
+                            </p>
+                        </div>
                     </div>
 
-                    <div style="text-align: center; margin-top: 2rem;">
+                    <div style="text-align: center; margin-top: 2.5rem;">
                         <a href="https://twitter.com/nex_artX" target="_blank" rel="noopener noreferrer"
                            class="btn" style="background: #000000; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                             <span style="font-size: 1.2rem;">𝕏</span>
@@ -99,42 +134,41 @@
                 </div>
             </div>
 
-            <!-- Why NFTs for Female Artists -->
-            <div class="why-nfts-section">
-                <h2 style="text-align: center; margin-bottom: 3rem;">Why NFTs for Female Artists?</h2>
-                <div class="nft-benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                        </div>
-                        <h3>Ownership & Control</h3>
-                        <p>Artists retain full control and provenance of their work. Every piece is authenticated on the blockchain, ensuring true ownership and creative rights.</p>
+            <!-- Milestones -->
+            <div class="about-section" style="margin-top: 3rem;">
+                <h2>Milestones</h2>
+                <div style="background: white; border-left: 4px solid var(--primary-indigo); padding: 0; border-radius: 8px; overflow: hidden;">
+                    <div style="padding: 1.5rem; border-bottom: 1px solid #f0f0f0;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">March 2026</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">UK Patent Application filed, UKIPO (GB 2604570.8)</p>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                        </div>
-                        <h3>Direct Connection</h3>
-                        <p>Connect with collectors without intermediaries. Build direct relationships with your audience and community without traditional gatekeepers.</p>
+                    <div style="padding: 1.5rem; border-bottom: 1px solid #f0f0f0;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">Early 2026</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">UK Trade Mark application filed (under examination)</p>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                        </div>
-                        <h3>Fair Compensation</h3>
-                        <p>Transparent transactions and ongoing royalties. Artists earn fairly from initial sales and continue to benefit from secondary market transactions.</p>
+                    <div style="padding: 1.5rem; border-bottom: 1px solid #f0f0f0;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">January 2026</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">NexArt website launched at nexartlimited.com</p>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">2025</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">R&D documentation completed: Technical Feasibility Report, Prior Art Analysis, Simulation & Testing Report, White Paper</p>
                     </div>
                 </div>
             </div>
 
-            <!-- What's Next -->
-            <div class="whats-next-section">
-                <h2>What's Next</h2>
-                <p>
-                    We're developing the NexArt platform with beta testing planned for Q3-Q4 2026. Join our waitlist to be among the first to experience the platform and connect with a vibrant community of artists and collectors.
+            <!-- Work With Us -->
+            <div class="about-section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); padding: 3rem 2rem; border-radius: 12px; margin-top: 3rem;">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;">Work With Us</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                    We are currently connecting with independent and female artists interested in being part of our early platform, and exploring partnerships in AI infrastructure.
                 </p>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="waitlist.html" class="btn btn-primary">Join Our Waitlist</a>
+                <div style="text-align: center;">
+                    <a href="mailto:nexartlimited@gmail.com"
+                       class="btn btn-primary"
+                       style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600;">
+                        Get in touch: nexartlimited@gmail.com
+                    </a>
                 </div>
             </div>
 
@@ -150,14 +184,6 @@
                 </div>
             </div>
 
-            <!-- Call to Action -->
-            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: #f8f9fa; border-radius: 15px;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Join Our Journey</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                    Be part of the community shaping the future of digital art
-                </p>
-                <a href="waitlist.html" class="btn btn-primary">Join the Waitlist</a>
-            </div>
         </div>
     </section>
 

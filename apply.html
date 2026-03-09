@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply as Artist - NexArt</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth-state.js"></script>
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header>
+    <nav class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <div class="auth-nav">
+        <a href="auth.html" id="loginLink">Login</a>
+        <a href="dashboard.html" id="dashboardLink" class="hidden">Dashboard</a>
+        <a href="admin.html" id="adminLink" class="hidden">Admin</a>
+        <a href="#" id="logoutLink" class="hidden" onclick="handleLogout(); return false;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="apply-main">
+    <div class="apply-container">
+      <div class="apply-header">
+        <h1>Apply to Join NexArt</h1>
+        <p>We're onboarding pioneer female artists to our platform. Share your story with us!</p>
+      </div>
+
+      <form id="applyForm" class="apply-form">
+        <div class="form-section">
+          <h3>Personal Information</h3>
+
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" required placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" required placeholder="your@email.com">
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Portfolio</h3>
+
+          <div class="form-group">
+            <label for="portfolioUrl">Portfolio Link *</label>
+            <input type="url" id="portfolioUrl" required placeholder="https://your-portfolio.com">
+            <small>Link to your online portfolio, website, or social media with your artworks</small>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Artist Statement</h3>
+
+          <div class="form-group">
+            <label for="artistStatement">Tell us about yourself and your art (200-500 words) *</label>
+            <textarea id="artistStatement" required rows="10"
+                      placeholder="Share your artistic journey, style, inspirations, and why you want to join NexArt..."></textarea>
+            <small class="char-count">
+              <span id="wordCount">0</span> words (min. 200, max. 500)
+            </small>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Social Media (Optional)</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="instagram">Instagram</label>
+              <input type="text" id="instagram" placeholder="@username">
+            </div>
+
+            <div class="form-group">
+              <label for="twitter">Twitter / X</label>
+              <input type="text" id="twitter" placeholder="@username">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" onclick="window.location.href='artists.html'" class="btn-secondary">Cancel</button>
+          <button type="submit" id="submitBtn" class="btn-primary">Submit Application</button>
+        </div>
+
+        <div id="applyMessage" class="message"></div>
+      </form>
+
+      <div id="successMessage" class="success-container hidden">
+        <div class="success-icon">✓</div>
+        <h2>Application Submitted!</h2>
+        <p>Thank you for your interest in joining NexArt. We'll review your application within 5 business days and get back to you via email.</p>
+        <a href="index.html" class="btn-primary">Return to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/apply.js"></script>
+</body>
+</html>

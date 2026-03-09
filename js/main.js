@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Waitlist Form Handler
+    // Waitlist Form Handler with Google Sheets Integration
     const waitlistForm = document.getElementById('waitlistForm');
     const waitlistMessage = document.getElementById('waitlistMessage');
 
@@ -55,16 +55,58 @@ document.addEventListener('DOMContentLoaded', function() {
                 newsletter: document.getElementById('newsletter').checked
             };
 
-            // Simulate form submission
-            console.log('Waitlist Form Submitted:', formData);
+            // REPLACE WITH YOUR GOOGLE SHEETS WEB APP URL
+            // Get this URL from: Extensions > Apps Script > Deploy > Web app
+            const googleSheetsURL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE';
 
-            // Show success message
-            waitlistMessage.textContent = '🎉 Success! You\'re on the waitlist. Check your email for confirmation.';
-            waitlistMessage.style.display = 'block';
-            waitlistMessage.style.color = '#10b981';
+            // If no Google Sheets URL is set, just show local success message
+            if (googleSheetsURL === 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') {
+                console.log('Waitlist Form Submitted (Local Only):', formData);
+                waitlistMessage.textContent = '🎉 Success! You\'re on the waitlist.';
+                waitlistMessage.style.display = 'block';
+                waitlistMessage.style.color = '#10b981';
+                waitlistForm.reset();
 
-            // Reset form
-            waitlistForm.reset();
+                setTimeout(function() {
+                    waitlistMessage.style.display = 'none';
+                }, 5000);
+                return;
+            }
+
+            // Send to Google Sheets
+            fetch(googleSheetsURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                // Show success message
+                waitlistMessage.textContent = '🎉 Success! You\'re on the waitlist. Check your email for confirmation.';
+                waitlistMessage.style.display = 'block';
+                waitlistMessage.style.color = '#10b981';
+
+                // Reset form
+                waitlistForm.reset();
+
+                // Track in Google Analytics if available
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'waitlist_signup', {
+                        'event_category': 'engagement',
+                        'event_label': formData.role
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting to Google Sheets:', error);
+                // Still show success to user (no-cors mode doesn't return errors)
+                waitlistMessage.textContent = '🎉 Success! You\'re on the waitlist.';
+                waitlistMessage.style.display = 'block';
+                waitlistMessage.style.color = '#10b981';
+                waitlistForm.reset();
+            });
 
             // Hide message after 5 seconds
             setTimeout(function() {

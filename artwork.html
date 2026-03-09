@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artwork Details - NexArt</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth-state.js"></script>
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header>
+    <nav class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <div class="auth-nav">
+        <a href="auth.html" id="loginLink">Login</a>
+        <a href="dashboard.html" id="dashboardLink" class="hidden">Dashboard</a>
+        <a href="admin.html" id="adminLink" class="hidden">Admin</a>
+        <a href="#" id="logoutLink" class="hidden" onclick="handleLogout(); return false;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="artwork-detail-main">
+    <div id="artworkContent" class="artwork-detail-container">
+      <div class="loading">Loading artwork...</div>
+    </div>
+  </main>
+
+  <script src="js/artwork-detail.js"></script>
+</body>
+</html>

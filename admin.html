@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - NexArt</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth-state.js"></script>
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header>
+    <nav class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <div class="auth-nav">
+        <a href="auth.html" id="loginLink" class="hidden">Login</a>
+        <a href="dashboard.html" id="dashboardLink">Dashboard</a>
+        <a href="admin.html" id="adminLink">Admin</a>
+        <a href="#" id="logoutLink" onclick="handleLogout(); return false;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+      <h1>Admin Panel</h1>
+
+      <div class="admin-tabs">
+        <button onclick="showTab('users')" class="admin-tab-btn active" id="usersTabBtn">Users</button>
+        <button onclick="showTab('artworks')" class="admin-tab-btn" id="artworksTabBtn">Artworks</button>
+        <button onclick="showTab('applications')" class="admin-tab-btn" id="applicationsTabBtn">Applications</button>
+      </div>
+
+      <!-- Users Tab -->
+      <div id="usersTab" class="admin-tab-content">
+        <h2>All Users</h2>
+        <div class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Display Name</th>
+                <th>Role</th>
+                <th>Created At</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <tr><td colspan="5" class="loading">Loading users...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Artworks Tab -->
+      <div id="artworksTab" class="admin-tab-content hidden">
+        <h2>All Artworks</h2>
+        <div class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Published</th>
+                <th>Created At</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="artworksTableBody">
+              <tr><td colspan="6" class="loading">Loading artworks...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Applications Tab -->
+      <div id="applicationsTab" class="admin-tab-content hidden">
+        <h2>Artist Applications</h2>
+        <div class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Portfolio</th>
+                <th>Status</th>
+                <th>Submitted At</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applicationsTableBody">
+              <tr><td colspan="6" class="loading">Loading applications...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Detail Modal -->
+    <div id="applicationModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeApplicationModal()">&times;</span>
+        <div id="applicationDetails"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up - NexArt</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+</head>
+<body>
+  <!-- 复用现有的 header/nav -->
+  <header>
+    <nav class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-container">
+      <div class="auth-header">
+        <h1>Welcome to NexArt</h1>
+        <p>Join our community of female artists and collectors</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button id="loginTab" class="tab-btn active" onclick="switchToLogin()">Login</button>
+        <button id="signupTab" class="tab-btn" onclick="switchToSignup()">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <h2>Login to Your Account</h2>
+
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required placeholder="your@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required placeholder="Min. 6 characters">
+        </div>
+
+        <button type="submit" class="btn-primary">Login</button>
+
+        <div id="loginMessage" class="message"></div>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm" class="auth-form hidden">
+        <h2>Create Your Account</h2>
+
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" required placeholder="your@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" required minlength="6" placeholder="Min. 6 characters">
+        </div>
+
+        <div class="form-group">
+          <label for="displayName">Display Name</label>
+          <input type="text" id="displayName" required placeholder="How should we call you?">
+        </div>
+
+        <div class="form-group">
+          <label for="userRole">I am a...</label>
+          <select id="userRole" required>
+            <option value="">Select your role</option>
+            <option value="artist">Artist</option>
+            <option value="viewer">Collector / Art Enthusiast</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary">Create Account</button>
+
+        <div id="signupMessage" class="message"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

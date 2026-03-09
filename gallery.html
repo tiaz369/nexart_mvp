@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Gallery - NexArt</title>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+    <!-- Get your ID from: https://analytics.google.com/analytics/web/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth-state.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -19,14 +37,13 @@
                 <li><a href="artists.html">Artists</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="waitlist.html">Waitlist</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="nav-buttons">
-                <button class="btn btn-wallet" disabled title="Available at launch">
-                    <svg class="wallet-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-                    Connect Wallet
-                </button>
-                <a href="waitlist.html" class="btn btn-primary btn-nav">Join Waitlist</a>
+            <div class="nav-buttons auth-nav">
+                <a href="auth.html" id="loginLink" class="btn btn-secondary btn-nav">Login</a>
+                <a href="dashboard.html" id="dashboardLink" class="btn btn-secondary btn-nav hidden">Dashboard</a>
+                <a href="admin.html" id="adminLink" class="btn btn-secondary btn-nav hidden">Admin</a>
+                <a href="#" id="logoutLink" class="btn btn-secondary btn-nav hidden" onclick="handleLogout(); return false;">Logout</a>
             </div>
         </div>
     </nav>
@@ -49,7 +66,7 @@
         <!-- Sample Disclaimer -->
         <div style="background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 16px 24px; margin: 24px auto 2rem; max-width: 1200px; border-radius: 8px;">
             <p style="margin: 0; color: #92400E; font-size: 14px;">
-                <strong>Sample Gallery:</strong> Artworks displayed are for demonstration purposes to showcase platform design. Real artist collections launching Q3 2026.
+                <strong>Sample Gallery:</strong> Artworks displayed are for demonstration purposes to showcase platform design. Beta testing with real artist collections Q3-Q4 2026.
             </p>
         </div>
 
