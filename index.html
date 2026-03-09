@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexArt - Empowering Female Artists in Web3</title>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+    <!-- Get your ID from: https://analytics.google.com/analytics/web/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth-state.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">NexArt</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons auth-nav">
+                <a href="auth.html" id="loginLink" class="btn btn-secondary btn-nav">Login</a>
+                <a href="dashboard.html" id="dashboardLink" class="btn btn-secondary btn-nav hidden">Dashboard</a>
+                <a href="admin.html" id="adminLink" class="btn btn-secondary btn-nav hidden">Admin</a>
+                <a href="#" id="logoutLink" class="btn btn-secondary btn-nav hidden" onclick="handleLogout(); return false;">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NexArt</h1>
+            <h2>Empowering Female Artists in Web3</h2>
+            <p class="hero-description">A curated NFT platform connecting talented female artists with collectors worldwide</p>
+            <div class="cta-buttons">
+                <a href="waitlist.html" class="btn btn-primary">Join Waitlist</a>
+                <a href="artists.html" class="btn btn-secondary">Explore Artists</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Features Section -->
+    <section>
+        <h2 class="section-title">Platform <span class="gradient-text">Features</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                </div>
+                <h3>Showcase Your Art</h3>
+                <p>Create and mint your digital artwork as NFTs. Reach global collectors and grow your audience.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"/></svg>
+                </div>
+                <h3>Discover Unique Art</h3>
+                <p>Explore curated collections from talented female artists. Own authenticated digital masterpieces.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                </div>
+                <h3>Join the Movement</h3>
+                <p>Be part of a supportive community empowering women in the Web3 art space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section style="background: #f8f9fa; margin: 0; padding: 5rem 5%; max-width: 100%;">
+        <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+        <div class="how-it-works-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Discover</h3>
+                <p>Browse curated artist profiles and collections</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Connect</h3>
+                <p>Engage with artists and their creative journey</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Collect</h3>
+                <p>Own unique NFT artworks on the blockchain</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Launch Announcement Section -->
+    <section class="launch-section">
+        <div class="launch-content">
+            <h2 class="section-title">Beta <span class="gradient-text">Coming 2026</span></h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; color: #666;">
+                Join our waitlist for early beta access starting Q3 2026
+            </p>
+            <form id="homeWaitlistForm" class="inline-form">
+                <input type="email" id="homeEmail" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <p id="homeFormMessage" class="form-message"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/nex_artX" target="_blank" rel="noopener noreferrer" title="X (Twitter)">𝕏</a>
+                <a href="#" title="Instagram" style="opacity: 0.4; cursor: not-allowed;" onclick="return false;">📷 <small style="font-size: 10px;">Soon</small></a>
+                <a href="#" title="Discord" style="opacity: 0.4; cursor: not-allowed;" onclick="return false;">💬 <small style="font-size: 10px;">Soon</small></a>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <span class="footer-separator">|</span>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <p style="font-size: 13px; color: #9CA3AF; text-align: center; margin: 1rem 0 0.5rem;">
+                Website content is for informational and demonstration purposes. Platform features and artist collaborations - Beta coming 2026.
+            </p>
+            <p class="copyright">© 2026 NexArt Ltd. All rights reserved. | UK-registered company</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

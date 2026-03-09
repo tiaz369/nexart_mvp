@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - NexArt</title>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+    <!-- Get your ID from: https://analytics.google.com/analytics/web/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Responsive styles for founder section */
+        @media (max-width: 768px) {
+            .founder-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            .founder-photo {
+                max-width: 200px !important;
+                margin: 0 auto !important;
+            }
+        }
+    </style>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth-state.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">NexArt</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons auth-nav">
+                <a href="auth.html" id="loginLink" class="btn btn-secondary btn-nav">Login</a>
+                <a href="dashboard.html" id="dashboardLink" class="btn btn-secondary btn-nav hidden">Dashboard</a>
+                <a href="admin.html" id="adminLink" class="btn btn-secondary btn-nav hidden">Admin</a>
+                <a href="#" id="logoutLink" class="btn btn-secondary btn-nav hidden" onclick="handleLogout(); return false;">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section style="margin-top: 100px;">
+        <div class="about-hero">
+            <h1 class="section-title">About <span class="gradient-text">NexArt</span></h1>
+            <p class="about-subtitle">AI Infrastructure & Digital Creative Economy</p>
+        </div>
+
+        <div class="about-content">
+            <!-- About NexArt -->
+            <div class="about-section">
+                <h2>About NexArt</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    NexArt Limited is a London-based technology company working at the intersection of AI infrastructure and the digital creative economy. We develop tools and protocols that address trust, identity, and ownership in decentralised digital environments — with a focus on supporting independent and female artists alongside our core technology work.
+                </p>
+            </div>
+
+            <!-- Technology Research -->
+            <div class="about-section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h2>Technology Research</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Our technology research centres on <strong>AI agent identity authentication</strong>: how autonomous AI systems can be assigned verifiable, tamper-resistant identities in a world where agents increasingly act without direct human supervision.
+                </p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary-indigo);">
+                    <p style="margin: 0; color: var(--text-body); font-size: 1rem;">
+                        <strong>Patent Status:</strong> A UK patent application has been filed with the Intellectual Property Office for our core protocol<br>
+                        <span style="color: var(--text-muted); font-size: 0.95rem;">Application No. GB 2604570.8, March 2026</span>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Founder -->
+            <div style="background: #FFFBEB; padding: 4rem 5%; margin: 4rem -5%; border-radius: 12px;">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--text-heading);">Founder</h2>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="founder-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; margin-bottom: 2rem;">
+                        <!-- Founder Photo -->
+                        <div style="text-align: center;">
+                            <!-- TODO: Replace with actual photo - upload founder-photo.jpg to /images/ directory -->
+                            <img class="founder-photo" src="images/founder-photo.jpg" alt="Linfang Zhong (Tia)"
+                                 style="width: 100%; max-width: 280px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="founder-photo" style="display: none; width: 100%; max-width: 280px; height: 320px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; align-items: center; justify-content: center; color: white; font-size: 4rem; font-weight: 600; margin: 0 auto;">
+                                LZ
+                            </div>
+                        </div>
+
+                        <!-- Founder Info -->
+                        <div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-heading);">Linfang Zhong (Tia)</h3>
+                            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem;">Founder & Director</p>
+
+                            <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; color: var(--text-body);">
+                                Linfang Zhong (Tia) is the Founder and Director of NexArt Limited. She holds an MA in Film Studies from the University of East Anglia and an MA in Education from University College London.
+                            </p>
+
+                            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-body);">
+                                Her work bridges art, technology research, and digital infrastructure.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2.5rem;">
+                        <a href="https://twitter.com/nex_artX" target="_blank" rel="noopener noreferrer"
+                           class="btn" style="background: #000000; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 1.2rem;">𝕏</span>
+                            Follow on X
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestones -->
+            <div class="about-section" style="margin-top: 3rem;">
+                <h2>Milestones</h2>
+                <div style="background: white; border-left: 4px solid var(--primary-indigo); padding: 0; border-radius: 8px; overflow: hidden;">
+                    <div style="padding: 1.5rem; border-bottom: 1px solid #f0f0f0;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">March 2026</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">UK Patent Application filed, UKIPO (GB 2604570.8)</p>
+                    </div>
+                    <div style="padding: 1.5rem; border-bottom: 1px solid #f0f0f0;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">Early 2026</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">UK Trade Mark application filed (under examination)</p>
+                    </div>
+                    <div style="padding: 1.5rem; border-bottom: 1px solid #f0f0f0;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">January 2026</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">NexArt website launched at nexartlimited.com</p>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <p style="margin: 0; font-weight: 600; color: var(--text-heading);">2025</p>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--text-body);">R&D documentation completed: Technical Feasibility Report, Prior Art Analysis, Simulation & Testing Report, White Paper</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work With Us -->
+            <div class="about-section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); padding: 3rem 2rem; border-radius: 12px; margin-top: 3rem;">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;">Work With Us</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                    We are currently connecting with independent and female artists interested in being part of our early platform, and exploring partnerships in AI infrastructure.
+                </p>
+                <div style="text-align: center;">
+                    <a href="mailto:nexartlimited@gmail.com"
+                       class="btn btn-primary"
+                       style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600;">
+                        Get in touch: nexartlimited@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <!-- Company Information -->
+            <div class="company-info">
+                <h2>Company Information</h2>
+                <div class="company-details">
+                    <p><strong>NexArt Ltd</strong></p>
+                    <p>UK-registered company</p>
+                    <p style="margin-top: 1rem; color: #666;">
+                        We're committed to building a transparent, inclusive, and innovative platform for the Web3 art community.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/nex_artX" target="_blank" rel="noopener noreferrer" title="X (Twitter)">𝕏</a>
+                <a href="#" title="Instagram" style="opacity: 0.4; cursor: not-allowed;" onclick="return false;">📷 <small style="font-size: 10px;">Soon</small></a>
+                <a href="#" title="Discord" style="opacity: 0.4; cursor: not-allowed;" onclick="return false;">💬 <small style="font-size: 10px;">Soon</small></a>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <span class="footer-separator">|</span>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <p style="font-size: 13px; color: #9CA3AF; text-align: center; margin: 1rem 0 0.5rem;">
+                Website content is for informational and demonstration purposes. Platform features and artist collaborations - Beta coming 2026.
+            </p>
+            <p class="copyright">© 2026 NexArt Ltd. All rights reserved. | UK-registered company</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Business Strategy Documents (Keep Private)
+ARTIST_COLLABORATION_TEMPLATE.md
+WAITLIST_PROMOTION_STRATEGY.md
+*_STRATEGY.md
+*_TEMPLATE.md
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/

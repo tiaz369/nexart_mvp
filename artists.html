@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Artists - NexArt</title>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+    <!-- Get your ID from: https://analytics.google.com/analytics/web/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth-state.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">NexArt</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons auth-nav">
+                <a href="auth.html" id="loginLink" class="btn btn-secondary btn-nav">Login</a>
+                <a href="dashboard.html" id="dashboardLink" class="btn btn-secondary btn-nav hidden">Dashboard</a>
+                <a href="admin.html" id="adminLink" class="btn btn-secondary btn-nav hidden">Admin</a>
+                <a href="#" id="logoutLink" class="btn btn-secondary btn-nav hidden" onclick="handleLogout(); return false;">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Artists Section -->
+    <section style="margin-top: 100px;">
+        <h2 class="section-title">Featured <span class="gradient-text">Artists</span></h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">
+            Discover talented female artists pioneering digital art in Web3
+        </p>
+
+        <!-- Coming Soon Banner -->
+        <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 2px solid var(--primary-indigo); padding: 24px 32px; margin: 24px auto 3rem; max-width: 1200px; border-radius: 12px; text-align: center;">
+            <h3 style="margin: 0 0 8px 0; color: var(--primary-indigo); font-size: 1.4rem;">Currently Onboarding Pioneer Artists</h3>
+            <p style="margin: 0; color: var(--text-body); font-size: 1.1rem;">
+                Interested in joining? <a href="contact.html" style="color: var(--primary-indigo); font-weight: 600; text-decoration: underline;">Contact us!</a>
+            </p>
+        </div>
+
+        <!-- Sample Disclaimer -->
+        <div style="background: #DBEAFE; border-left: 4px solid #3B82F6; padding: 16px 24px; margin: 24px auto 3rem; max-width: 1200px; border-radius: 8px;">
+            <p style="margin: 0; color: #1E40AF; font-size: 14px;">
+                <strong>Sample Profiles:</strong> Artist profiles shown below are for demonstration purposes to showcase platform design and potential. Beta testing with real artist collaborations Q3-Q4 2026.
+            </p>
+        </div>
+
+        <div class="artists-grid">
+            <!-- Artist 1: Sarah Chen -->
+            <div class="artist-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop"
+                     alt="Sarah Chen"
+                     class="artist-image">
+                <div class="artist-info">
+                    <h3>Sarah Chen</h3>
+                    <p class="artist-location">🌏 Hong Kong</p>
+                    <p class="artist-style">Abstract Digital</p>
+                    <p class="artist-bio">Sarah creates mesmerizing abstract compositions that blend Eastern philosophy with digital innovation. Her work explores the harmony between chaos and order.</p>
+                    <div class="artist-stats">
+                        <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> 6 Artworks</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-small" disabled>View Profile <span class="coming-soon-badge">Coming Soon</span></button>
+                </div>
+            </div>
+
+            <!-- Artist 2: Maria Santos -->
+            <div class="artist-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=600&fit=crop"
+                     alt="Maria Santos"
+                     class="artist-image">
+                <div class="artist-info">
+                    <h3>Maria Santos</h3>
+                    <p class="artist-location">🌎 Brazil</p>
+                    <p class="artist-style">Contemporary Mixed Media</p>
+                    <p class="artist-bio">Maria's vibrant works celebrate Latin American culture through contemporary digital techniques. Her pieces are a fusion of traditional motifs and modern aesthetics.</p>
+                    <div class="artist-stats">
+                        <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> 5 Artworks</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-small" disabled>View Profile <span class="coming-soon-badge">Coming Soon</span></button>
+                </div>
+            </div>
+
+            <!-- Artist 3: Aisha Rahman -->
+            <div class="artist-card">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=600&fit=crop"
+                     alt="Aisha Rahman"
+                     class="artist-image">
+                <div class="artist-info">
+                    <h3>Aisha Rahman</h3>
+                    <p class="artist-location">🇬🇧 UK</p>
+                    <p class="artist-style">Geometric Art</p>
+                    <p class="artist-bio">Aisha specializes in precise geometric patterns that draw inspiration from Islamic art and mathematical beauty. Each piece is a meditation on symmetry and balance.</p>
+                    <div class="artist-stats">
+                        <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> 4 Artworks</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-small" disabled>View Profile <span class="coming-soon-badge">Coming Soon</span></button>
+                </div>
+            </div>
+
+            <!-- Artist 4: Elena Novak -->
+            <div class="artist-card">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=600&fit=crop"
+                     alt="Elena Novak"
+                     class="artist-image">
+                <div class="artist-info">
+                    <h3>Elena Novak</h3>
+                    <p class="artist-location">🇵🇱 Poland</p>
+                    <p class="artist-style">Digital Illustration</p>
+                    <p class="artist-bio">Elena brings fantastical worlds to life through her intricate digital illustrations. Her storytelling through art transports viewers to dreamlike narratives.</p>
+                    <div class="artist-stats">
+                        <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> 5 Artworks</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-small" disabled>View Profile <span class="coming-soon-badge">Coming Soon</span></button>
+                </div>
+            </div>
+
+            <!-- Artist 5: Yuki Tanaka -->
+            <div class="artist-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop"
+                     alt="Yuki Tanaka"
+                     class="artist-image">
+                <div class="artist-info">
+                    <h3>Yuki Tanaka</h3>
+                    <p class="artist-location">🇯🇵 Japan</p>
+                    <p class="artist-style">Minimalist Art</p>
+                    <p class="artist-bio">Yuki's minimalist approach emphasizes the power of negative space and subtle color gradients. Her work embodies the Japanese concept of "ma" - the beauty of emptiness.</p>
+                    <div class="artist-stats">
+                        <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> 6 Artworks</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-small" disabled>View Profile <span class="coming-soon-badge">Coming Soon</span></button>
+                </div>
+            </div>
+
+            <!-- Artist 6: Zara Ahmed -->
+            <div class="artist-card">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&h=600&fit=crop"
+                     alt="Zara Ahmed"
+                     class="artist-image">
+                <div class="artist-info">
+                    <h3>Zara Ahmed</h3>
+                    <p class="artist-location">🇦🇪 UAE</p>
+                    <p class="artist-style">Cultural Fusion</p>
+                    <p class="artist-bio">Zara bridges traditional Middle Eastern art forms with cutting-edge digital techniques. Her work celebrates cultural heritage while embracing technological innovation.</p>
+                    <div class="artist-stats">
+                        <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> 4 Artworks</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-small" disabled>View Profile <span class="coming-soon-badge">Coming Soon</span></button>
+                </div>
+            </div>
+        </div>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                Want to stay updated on new artists and collections?
+            </p>
+            <form id="artistsWaitlistForm" class="inline-form" style="max-width: 500px; margin: 0 auto;">
+                <input type="email" id="artistsEmail" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <p id="artistsFormMessage" class="form-message"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/nex_artX" target="_blank" rel="noopener noreferrer" title="X (Twitter)">𝕏</a>
+                <a href="#" title="Instagram" style="opacity: 0.4; cursor: not-allowed;" onclick="return false;">📷 <small style="font-size: 10px;">Soon</small></a>
+                <a href="#" title="Discord" style="opacity: 0.4; cursor: not-allowed;" onclick="return false;">💬 <small style="font-size: 10px;">Soon</small></a>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <span class="footer-separator">|</span>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <p style="font-size: 13px; color: #9CA3AF; text-align: center; margin: 1rem 0 0.5rem;">
+                Website content is for informational and demonstration purposes. Platform features and artist collaborations - Beta coming 2026.
+            </p>
+            <p class="copyright">© 2026 NexArt Ltd. All rights reserved. | UK-registered company</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
