@@ -685,3 +685,16 @@ footer {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* Founder Section Responsive */
+@media (max-width: 768px) {
+    .founder-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .founder-photo {
+        max-width: 200px !important;
+        margin: 0 auto !important;
+    }
+}
