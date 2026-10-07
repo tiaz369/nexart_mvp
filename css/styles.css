@@ -191,7 +191,6 @@ nav {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .btn {
@@ -547,7 +546,6 @@ footer {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     opacity: 0.95;
-    animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 /* Navigation Buttons */
@@ -1821,91 +1819,143 @@ footer {
   }
 }
 
-/* Responsive Typography */
+/* Responsive Typography & Layout */
 @media (max-width: 768px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
-  
-  h1 {
-    font-size: 2rem;
+
+  /* Fix hero height and spacing */
+  .hero {
+    min-height: auto;
+    padding: 3rem 1.5rem;
+    margin-bottom: 64px;
   }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-  }
-  
-  p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-  
+
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
-  
+
   .hero h2 {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.6;
   }
-  
-  section {
-    padding: 2.5rem 5%;
+
+  /* Stack buttons full width with proper gap */
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
   }
-  
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 65ch;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  /* Center content containers but left-align text */
+  section > div {
+    text-align: left;
+  }
+
+  section > div p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Feature cards */
   .feature-card h3 {
     font-size: 1.1rem;
   }
-  
+
   .feature-card p {
-    font-size: 0.9rem;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  /* Footer visibility fix */
+  footer {
+    opacity: 1 !important;
+  }
+
+  .footer-content,
+  .footer-links,
+  .copyright,
+  .social-links {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
 @media (max-width: 480px) {
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
-  
+
+  .hero {
+    padding: 2.5rem 1.25rem;
+    margin-bottom: 64px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.05rem;
+  }
+
   h1 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
-  
+
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.875rem;
   }
-  
+
   h3 {
     font-size: 1.1rem;
   }
-  
+
   p {
-    font-size: 0.9rem;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.6;
   }
-  
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .hero h2 {
-    font-size: 0.95rem;
-  }
-  
+
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
-  
+
   section {
-    padding: 2rem 5%;
+    padding: 2.5rem 1.25rem;
   }
 }
