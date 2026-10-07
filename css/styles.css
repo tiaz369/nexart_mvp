@@ -75,8 +75,8 @@ h3 {
 }
 
 p {
-    font-size: 1.05rem;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.65;
     color: var(--text-secondary);
     margin-bottom: 1rem;
 }
@@ -1828,52 +1828,84 @@ footer {
   }
   
   h1 {
-    font-size: 2.2rem;
-  }
-  
-  h2 {
-    font-size: 1.6rem;
-  }
-  
-  h3 {
-    font-size: 1.3rem;
-  }
-  
-  p {
-    font-size: 1rem;
-  }
-  
-  .section-title {
     font-size: 2rem;
   }
   
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .hero h2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
   
   section {
-    padding: 3rem 5%;
+    padding: 2.5rem 5%;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
   
   .hero h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .hero h2 {
+    font-size: 0.95rem;
   }
   
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+  
+  section {
+    padding: 2rem 5%;
   }
 }
